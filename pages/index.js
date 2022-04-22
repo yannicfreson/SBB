@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import Title from "../components/Title";
 import Footer from "../components/Footer";
-import BingoTile from "../components/BingoTile";
+import Board from "../components/Board";
 
 export default function Home() {
   return (
@@ -10,21 +9,20 @@ export default function Home() {
       <Head>
         <title>Bullshit Bingo</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <main className="container mx-auto">
         <div className="mb-8">
           <Title />
         </div>
-        <div className="grid grid-cols-5 grid-rows-5 gap-4">
-          <BingoTile
-            colStart={1}
-            colEnd={2}
-            rowStart={1}
-            rowEnd={2}
-            height="10vh"
-            color="sky-800"
-          />
+        <div className="mb-8 w-full">
+          <Board />
         </div>
       </main>
 
