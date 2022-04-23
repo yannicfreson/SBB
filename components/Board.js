@@ -3,24 +3,24 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref, get, child, onValue } from "firebase/database";
 import BingoTile from "../components/BingoTile";
 
-const shuffleSeed = require("shuffle-seed");
-let words = require("../wordlist.json");
-words = shuffleSeed.shuffle(words, `${new Date().getDate()} yannic`);
+export default function Board({ name }) {
+  const shuffleSeed = require("shuffle-seed");
+  let words = require("../wordlist.json");
+  words = shuffleSeed.shuffle(words, `${new Date().getDate()} ${name}`);
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAs3XPCoDVTNpya0gekWQqWpJKLg2ECZrU",
-  authDomain: "swakke-bullshit-bingo.firebaseapp.com",
-  databaseURL:
-    "https://swakke-bullshit-bingo-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "swakke-bullshit-bingo",
-  storageBucket: "swakke-bullshit-bingo.appspot.com",
-  messagingSenderId: "174507017889",
-  appId: "1:174507017889:web:c3d35a4f3903c2e1a652e0",
-};
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+  const firebaseConfig = {
+    apiKey: "AIzaSyAs3XPCoDVTNpya0gekWQqWpJKLg2ECZrU",
+    authDomain: "swakke-bullshit-bingo.firebaseapp.com",
+    databaseURL:
+      "https://swakke-bullshit-bingo-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "swakke-bullshit-bingo",
+    storageBucket: "swakke-bullshit-bingo.appspot.com",
+    messagingSenderId: "174507017889",
+    appId: "1:174507017889:web:c3d35a4f3903c2e1a652e0",
+  };
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
 
-export default function Board() {
   const [state, setState] = useState({});
 
   get(ref(database, "pd")).then((snapshot) => {
@@ -32,7 +32,7 @@ export default function Board() {
           0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
           0, 0,
         ]);
-        set(ref(database, "yannic"), state);
+        set(ref(database, name), state);
       }
     } else {
       set(ref(database, "pd"), new Date().getDate());
@@ -40,7 +40,7 @@ export default function Board() {
   });
 
   useLayoutEffect(function () {
-    onValue(ref(database, "yannic"), (snapshot) => {
+    onValue(ref(database, name), (snapshot) => {
       if (snapshot.val()) {
         setState(snapshot.val());
       } else {
@@ -59,7 +59,7 @@ export default function Board() {
       state[id] = 0;
     }
 
-    set(ref(database, "yannic"), state);
+    set(ref(database, name), state);
   }
 
   return (

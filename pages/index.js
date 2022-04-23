@@ -2,8 +2,24 @@ import Head from "next/head";
 import Title from "../components/Title";
 import Footer from "../components/Footer";
 import Board from "../components/Board";
+import { useLayoutEffect, useState } from "react";
 
 export default function Home() {
+  let playerName = "default";
+
+  useLayoutEffect(function () {
+    document
+      .getElementById("playerName")
+      .addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          name = document.getElementById("playerName").value.toLowerCase();
+          console.log(name);
+          document.getElementById("nameDiv").classList.add("hidden");
+          document.getElementById("board").classList.remove("hidden");
+        }
+      });
+  }, []);
+
   return (
     <div>
       <Head>
@@ -21,12 +37,19 @@ export default function Home() {
         <div className="mb-8">
           <Title />
         </div>
-        <div className="mb-8 w-full">
-          <Board />
+        <div id="nameDiv" className="mt-80 h-max w-full text-center">
+          <p className="mb-8 text-6xl font-black">What's your name?</p>
+          <input
+            id="playerName"
+            className="inset-4 h-[2rem] w-1/5 border-b-4 border-dotted border-white bg-[#16161e] p-6 text-center font-chewy text-4xl font-black uppercase text-white"
+          ></input>
+        </div>
+        <div id="board" className="mb-8 hidden w-full">
+          <Board name={playerName} />
         </div>
       </main>
 
-      <footer>
+      <footer className="absolute bottom-0 mb-4 w-full">
         <Footer />
       </footer>
     </div>
