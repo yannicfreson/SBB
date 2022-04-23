@@ -8,6 +8,7 @@ export default function Board() {
 
   const shuffleSeed = require("shuffle-seed");
   let words = require("../wordlist.json");
+
   words = shuffleSeed.shuffle(words, `${new Date().getDate()} ${name}`);
 
   const firebaseConfig = {
@@ -42,7 +43,9 @@ export default function Board() {
   });
 
   useLayoutEffect(function () {
-    name = window.localStorage.getItem("playerName");
+    if (window.localStorage.getItem("playerName") !== null) {
+      name = window.localStorage.getItem("playerName");
+    }
     onValue(ref(database, name), (snapshot) => {
       if (snapshot.val()) {
         setState(snapshot.val());
