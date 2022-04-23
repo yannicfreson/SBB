@@ -3,7 +3,9 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref, get, child, onValue } from "firebase/database";
 import BingoTile from "../components/BingoTile";
 
-export default function Board({ name }) {
+export default function Board() {
+  let name = "";
+
   const shuffleSeed = require("shuffle-seed");
   let words = require("../wordlist.json");
   words = shuffleSeed.shuffle(words, `${new Date().getDate()} ${name}`);
@@ -40,6 +42,7 @@ export default function Board({ name }) {
   });
 
   useLayoutEffect(function () {
+    name = window.localStorage.getItem("playerName");
     onValue(ref(database, name), (snapshot) => {
       if (snapshot.val()) {
         setState(snapshot.val());
@@ -53,6 +56,7 @@ export default function Board({ name }) {
   }, []);
 
   function handleClick(id) {
+    name = window.localStorage.getItem("playerName");
     if (state[id] === 0) {
       state[id] = 1;
     } else {

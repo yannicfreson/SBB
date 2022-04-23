@@ -6,16 +6,24 @@ import { useLayoutEffect, useState } from "react";
 
 export default function Home() {
   let playerName = "default";
+  const [state, setState] = useState({});
 
   useLayoutEffect(function () {
     document
       .getElementById("playerName")
       .addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
-          name = document.getElementById("playerName").value.toLowerCase();
-          console.log(name);
-          document.getElementById("nameDiv").classList.add("hidden");
-          document.getElementById("board").classList.remove("hidden");
+          playerName = document
+            .getElementById("playerName")
+            .value.toLowerCase();
+          if (playerName === window.localStorage.getItem("playerName")) {
+            window.localStorage.setItem("playerName", playerName);
+            document.getElementById("nameDiv").classList.add("hidden");
+            document.getElementById("board").classList.remove("hidden");
+          } else {
+            window.localStorage.setItem("playerName", playerName);
+            location.reload();
+          }
         }
       });
   }, []);
@@ -45,7 +53,7 @@ export default function Home() {
           ></input>
         </div>
         <div id="board" className="mb-8 hidden w-full">
-          <Board name={playerName} />
+          <Board />
         </div>
       </main>
 
