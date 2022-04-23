@@ -4,7 +4,7 @@ import { getDatabase, set, ref, get, child, onValue } from "firebase/database";
 import BingoTile from "../components/BingoTile";
 
 export default function Board() {
-  let name = "";
+  let name = "default";
 
   const shuffleSeed = require("shuffle-seed");
   let words = require("../wordlist.json");
