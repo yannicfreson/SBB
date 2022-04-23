@@ -34,7 +34,7 @@ export default function Home() {
         <title>Bullshit Bingo</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
           rel="stylesheet"
@@ -46,7 +46,7 @@ export default function Home() {
           <Title />
         </div>
         <div id="nameDiv" className="mt-80 h-max w-full text-center">
-          <p className="mb-8 text-6xl font-black">What's your name?</p>
+          <p className="mb-8 text-6xl font-black">What is your name?</p>
           <input
             id="playerName"
             className="inset-4 h-[2rem] w-1/5 border-b-4 border-dotted border-white bg-[#16161e] p-6 text-center font-chewy text-4xl font-black uppercase text-white"
