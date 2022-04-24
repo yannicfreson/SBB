@@ -70,7 +70,7 @@ export default function Board() {
   }
 
   return (
-    <div className="grid grid-cols-5 grid-rows-5 gap-4 text-center text-4xl font-black children:hover:cursor-pointer">
+    <div className="mr-4 grid grid-cols-5 grid-rows-5 gap-1 overflow-hidden text-center text-xs font-black children:hover:cursor-pointer sm:mr-0 sm:gap-4 sm:overflow-auto sm:text-4xl">
       <div onClick={() => handleClick(0)} className="h-[7rem]">
         {state[0] === 1 ? (
           <BingoTile word={words[0]} found={true} />

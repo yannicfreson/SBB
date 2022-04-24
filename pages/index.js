@@ -45,14 +45,16 @@ export default function Home() {
         <div className="mb-8">
           <Title />
         </div>
-        <div id="nameDiv" className="mt-80 h-max w-full text-center">
-          <p className="mb-8 text-6xl font-black">What is your name?</p>
+        <div id="nameDiv" className="mt-44 h-max w-full text-center sm:mt-80">
+          <p className="text-3xl font-black sm:mb-8 sm:text-6xl">
+            What is your name?
+          </p>
           <input
             id="playerName"
-            className="inset-4 h-[2rem] w-1/5 border-b-4 border-dotted border-white bg-[#16161e] p-6 text-center font-chewy text-4xl font-black uppercase text-white"
+            className="mt-6 h-[2rem] w-1/2 border-b-4 border-dotted border-white bg-[#16161e] p-2 text-center font-chewy text-base font-black uppercase text-white sm:mt-0 sm:w-1/5 sm:p-6 sm:text-4xl"
           ></input>
         </div>
-        <div id="board" className="mb-8 hidden w-full">
+        <div id="board" className="mx-4 mb-8 hidden w-full sm:mx-0">
           <Board />
         </div>
       </main>
