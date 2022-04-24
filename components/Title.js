@@ -1,6 +1,6 @@
 export default function Title() {
   return (
-    <p className="w-full text-center text-4xl font-black sm:text-8xl">
+    <p className="w-full text-center text-4xl font-black sm:text-9xl">
       <span className="mr-2">
         <span>BULLSH</span>
         <span className="text-sky-400">I</span>

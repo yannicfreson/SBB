@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="w-full font-black text-white text-center">
+    <footer className="w-full text-center font-black text-white">
       <a
         href="https://www.yannicfreson.be/"
         target="_blank"
         rel="noopener noreferrer"
       >
         <span className="mr-1">Made with</span>
-        <span className="text-sky-300">
+        <span className="text-sky-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mb-1 inline h-5 w-5"
