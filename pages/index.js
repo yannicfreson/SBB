@@ -58,7 +58,10 @@ export default function Home() {
           <Board />
         </div> */}
         this project is deprecated, visit the new version at
-        <a href="https://yannicfreson.github.io/Bullshit-Bingo/">
+        <a
+          className="ml-2"
+          href="https://yannicfreson.github.io/Bullshit-Bingo/"
+        >
           https://yannicfreson.github.io/Bullshit-Bingo/
         </a>
       </main>
