@@ -11,16 +11,6 @@ export default function Board() {
 
   words = shuffleSeed.shuffle(words, `${new Date().getDate()}`);
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyAs3XPCoDVTNpya0gekWQqWpJKLg2ECZrU",
-    authDomain: "swakke-bullshit-bingo.firebaseapp.com",
-    databaseURL:
-      "https://swakke-bullshit-bingo-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "swakke-bullshit-bingo",
-    storageBucket: "swakke-bullshit-bingo.appspot.com",
-    messagingSenderId: "174507017889",
-    appId: "1:174507017889:web:c3d35a4f3903c2e1a652e0",
-  };
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
 

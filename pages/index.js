@@ -42,7 +42,7 @@ export default function Home() {
       </Head>
 
       <main className="container mx-auto">
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <Title />
         </div>
         <div id="nameDiv" className="mt-44 h-max w-full text-center sm:mt-80">
@@ -56,12 +56,14 @@ export default function Home() {
         </div>
         <div id="board" className="mx-4 mb-8 hidden w-full sm:mx-0">
           <Board />
-        </div>
+        </div> */}
+        this project is deprecated, visit the
+        <a href="https://yannicfreson.github.io/Bullshit-Bingo/">new version</a>
       </main>
 
-      <footer className="absolute bottom-0 mb-4 w-full">
+      {/* <footer className="absolute bottom-0 mb-4 w-full">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }
