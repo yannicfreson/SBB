@@ -57,8 +57,10 @@ export default function Home() {
         <div id="board" className="mx-4 mb-8 hidden w-full sm:mx-0">
           <Board />
         </div> */}
-        this project is deprecated, visit the
-        <a href="https://yannicfreson.github.io/Bullshit-Bingo/">new version</a>
+        this project is deprecated, visit the new version at
+        <a href="https://yannicfreson.github.io/Bullshit-Bingo/">
+          https://yannicfreson.github.io/Bullshit-Bingo/
+        </a>
       </main>
 
       {/* <footer className="absolute bottom-0 mb-4 w-full">
