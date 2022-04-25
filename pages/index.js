@@ -41,7 +41,7 @@ export default function Home() {
         />
       </Head>
 
-      <main className="container mx-auto">
+      <main className="container mx-auto text-center">
         {/* <div className="mb-8">
           <Title />
         </div>
@@ -57,7 +57,7 @@ export default function Home() {
         <div id="board" className="mx-4 mb-8 hidden w-full sm:mx-0">
           <Board />
         </div> */}
-        this project is deprecated, visit the new version at
+        This project is deprecated, visit the new version at
         <a
           className="ml-2"
           href="https://yannicfreson.github.io/Bullshit-Bingo/"
