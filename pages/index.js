@@ -5,7 +5,7 @@ import Board from "../components/Board";
 import { useLayoutEffect, useState } from "react";
 
 export default function Home() {
-  let playerName = "default";
+  /* let playerName = "default";
   const [state, setState] = useState({});
 
   useLayoutEffect(function () {
@@ -26,7 +26,7 @@ export default function Home() {
           }
         }
       });
-  }, []);
+  }, []); */
 
   return (
     <div>
